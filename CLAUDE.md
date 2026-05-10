@@ -12,7 +12,7 @@ npm run preview  # preview the production build locally
 
 ## Architecture
 
-Astro static site for "Tax Wealth Not Work" — a New Zealand-focused political/advocacy website.
+Astro static site for "Tax Wealth Not Work" — a New Zealand-focused political/advocacy website. Domain: twnw.nz
 
 **Stack:** Astro 6 · Tailwind CSS 4 · DaisyUI 5 · TypeScript (strict)
 
