@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Share from "../components/Share.astro";
+import Tooltip from "../components/Tooltip.astro";
 ---
 
 <Layout>
@@ -48,8 +49,11 @@ import Share from "../components/Share.astro";
         <li class="flex gap-3">
           <span class="text-primary font-bold">→</span>
           <span
-            >NZ is the only OECD country with no capital gains tax, no
-            inheritance tax, and no wealth tax.</span
+            >NZ is the only <Tooltip
+              title="The Organisation for Economic Co-operation and Development — a group of 38 mostly high-income countries that share economic policy and data."
+              >OECD</Tooltip
+            > country with no capital gains tax, no inheritance tax, and no wealth
+            tax.</span
           >
         </li>
         <li class="flex gap-3">
@@ -167,20 +171,21 @@ import Share from "../components/Share.astro";
     </ul>
   </section>
 
-  <section
-    class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center border-t border-base-300"
-  >
-    <p class="text-sm uppercase tracking-widest text-base-content/60">
-      More coming soon
-    </p>
-    <p class="mt-3 text-base-content/70">
-      This is just the start. Check back as the movement grows.
-    </p>
-    <p class="mt-3 text-base-content/70">
-      Got ideas on how to further the cause or spread the message? Reach out at
-      <a href="mailto:hello@twnw.nz" class="link link-primary"
-        >hello@twnw.nz</a
-      >.
-    </p>
+  <section class="border-t border-base-300">
+    <div class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center">
+      <p class="text-sm uppercase tracking-widest text-base-content/60">
+        More coming soon
+      </p>
+      <p class="mt-3 text-base-content/70">
+        This is just the start. Check back as the movement grows.
+      </p>
+      <p class="mt-3 text-base-content/70">
+        Got ideas on how to further the cause or spread the message? Reach out
+        at
+        <a href="mailto:hello@twnw.nz" class="link link-primary"
+          >hello@twnw.nz</a
+        >.
+      </p>
+    </div>
   </section>
 </Layout>

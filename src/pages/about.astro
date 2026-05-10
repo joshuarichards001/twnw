@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Tooltip from "../components/Tooltip.astro";
 ---
 
 <Layout>
@@ -13,10 +14,12 @@ import Layout from "../layouts/Layout.astro";
         Why New Zealand is unusual
       </h2>
       <p>
-        Of the 38 OECD countries, New Zealand is the only one with no capital
-        gains tax, no inheritance tax, and no wealth tax. The result is a tax
-        base that leans heavily on income from work, and very lightly on wealth
-        that compounds in the background.
+        Of the 38 <Tooltip
+          title="The Organisation for Economic Co-operation and Development — a group of 38 mostly high-income countries that share economic policy and data."
+          >OECD</Tooltip
+        > countries, New Zealand is the only one with no capital gains tax, no inheritance
+        tax, and no wealth tax. The result is a tax base that leans heavily on income
+        from work, and very lightly on wealth that compounds in the background.
       </p>
 
       <h2 class="text-2xl font-semibold tracking-tight pt-6">
@@ -37,10 +40,11 @@ import Layout from "../layouts/Layout.astro";
       </h2>
 
       <p>
-        Started by me, Josh Richards — a Kiwi in my late twenties, not a tax
-        expert and not a politician. I was inspired by Gary Stevenson from
-        Gary's Economics who have been making the same case in the UK for years.
-        This is the New Zealand version.
+        Started by me, Josh Richards 👋 a Kiwi in my late twenties, I'm not a
+        tax expert or politician but someone who wants to see New Zealand
+        succeed. I was inspired by Gary Stevenson from Gary's Economics who have
+        been making the same case in the UK for years. This is the New Zealand
+        version.
       </p>
 
       <h2 class="text-2xl font-semibold tracking-tight pt-6">The goal</h2>
@@ -53,8 +57,6 @@ import Layout from "../layouts/Layout.astro";
           class="link link-primary">hello@twnw.nz</a
         >.
       </p>
-
-      <p class="pt-2 text-base-content/70">— Josh</p>
     </div>
   </article>
 </Layout>
