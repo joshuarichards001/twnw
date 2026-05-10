@@ -1,18 +1,11 @@
 ---
 import "../styles/global.css";
-import QRCode from "qrcode";
 
 const siteUrl = "https://twnw.nz";
 const ogImage = `${siteUrl}/og-image.svg`;
 const title = "Tax Wealth Not Work — Capital Gains & Wealth Tax Reform for NZ";
 const description =
   "A movement to rebalance New Zealand's tax system: less income tax for working Kiwis, a fairer capital gains tax, and a wealth tax on the ultra-rich.";
-
-const qrDataUrl = await QRCode.toDataURL(siteUrl, {
-  width: 300,
-  margin: 2,
-  color: { dark: "#000000", light: "#ffffff" },
-});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -317,15 +310,17 @@ const jsonLd = {
               </p>
               <img
                 id="qr-code"
-                src={qrDataUrl}
+                src="/qr-code.png"
                 alt="QR code for twnw.nz"
                 width="160"
                 height="160"
+                loading="lazy"
+                decoding="async"
                 class="rounded-lg border border-base-300 bg-white p-2"
               />
               <a
                 id="download-qr-btn"
-                href={qrDataUrl}
+                href="/qr-code.png"
                 download="twnw-qr-code.png"
                 class="btn btn-sm gap-2"
                 aria-label="Download QR code"
