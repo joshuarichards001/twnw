@@ -1,0 +1,140 @@
+---
+import "../styles/global.css";
+
+const siteUrl = "https://twnw.nz";
+const ogImage = `${siteUrl}/og-image.svg`;
+const title = "Tax Wealth Not Work — Capital Gains & Wealth Tax Reform for NZ";
+const description =
+  "A movement to rebalance New Zealand's tax system: less income tax for working Kiwis, a fairer capital gains tax, and a wealth tax on the ultra-rich.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Tax Wealth Not Work",
+      alternateName: "TWNW",
+      url: siteUrl,
+      logo: `${siteUrl}/favicon.svg`,
+      description,
+      areaServed: {
+        "@type": "Country",
+        name: "New Zealand",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Tax Wealth Not Work",
+      description,
+      inLanguage: "en-NZ",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
+};
+---
+
+<html lang="en-NZ" data-theme="emerald">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="geo.region" content="NZ" />
+    <meta name="geo.placename" content="New Zealand" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="preconnect" href="https://plausible.io" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tax Wealth Not Work" />
+    <meta property="og:locale" content="en_NZ" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Tax wealth, not work — a movement for a fairer New Zealand"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta
+      name="twitter:image:alt"
+      content="Tax wealth, not work — a movement for a fairer New Zealand"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script defer src="https://plausible.io/js/pa-jdCJIQQZVkHmVM3J0VvQA.js"
+    ></script>
+    <script>
+      declare global {
+        interface Window {
+          plausible: ((...args: unknown[]) => void) & {
+            q?: unknown[][];
+            o?: Record<string, unknown>;
+            init?: (options?: Record<string, unknown>) => void;
+          };
+        }
+      }
+      window.plausible =
+        window.plausible ||
+        function (...args: unknown[]) {
+          (window.plausible.q = window.plausible.q || []).push(args);
+        };
+      window.plausible.init =
+        window.plausible.init ||
+        function (i?: Record<string, unknown>) {
+          window.plausible.o = i || {};
+        };
+      window.plausible.init();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-base-100">
+    <header
+      class="navbar border-b border-base-300 px-4 sm:px-8 sticky top-0 z-50 bg-base-100"
+    >
+      <div class="flex-1 flex items-center gap-3">
+        <img
+          src="/favicon.svg"
+          alt="Tax Wealth Not Work logo"
+          width="40"
+          height="40"
+          class="border border-base-300 rounded"
+        />
+        <span class="font-semibold tracking-tight">Tax Wealth Not Work</span>
+      </div>
+      <div class="flex-none hidden sm:block">
+        <span class="text-sm text-base-content/60">Aotearoa New Zealand</span>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-base-300">
+      <div
+        class="px-4 sm:px-8 py-6 max-w-3xl mx-auto flex flex-col sm:flex-row justify-between gap-2 text-sm text-base-content/60"
+      >
+        <span>© {new Date().getFullYear()} Tax Wealth Not Work</span>
+        <span>Aotearoa New Zealand</span>
+      </div>
+    </footer>
+  </body>
+</html>

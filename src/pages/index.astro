@@ -1,467 +1,180 @@
 ---
-import "../styles/global.css";
-
-const siteUrl = "https://twnw.nz";
-const ogImage = `${siteUrl}/og-image.svg`;
-const title = "Tax Wealth Not Work — Capital Gains & Wealth Tax Reform for NZ";
-const description =
-  "A movement to rebalance New Zealand's tax system: less income tax for working Kiwis, a fairer capital gains tax, and a wealth tax on the ultra-rich.";
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "Tax Wealth Not Work",
-      alternateName: "TWNW",
-      url: siteUrl,
-      logo: `${siteUrl}/favicon.svg`,
-      description,
-      areaServed: {
-        "@type": "Country",
-        name: "New Zealand",
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: "Tax Wealth Not Work",
-      description,
-      inLanguage: "en-NZ",
-      publisher: { "@id": `${siteUrl}/#organization` },
-    },
-  ],
-};
+import Layout from "../layouts/Layout.astro";
+import Share from "../components/Share.astro";
 ---
 
-<html lang="en-NZ" data-theme="emerald">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#10b981" />
-    <meta name="geo.region" content="NZ" />
-    <meta name="geo.placename" content="New Zealand" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={siteUrl} />
-    <link rel="preconnect" href="https://plausible.io" />
+<Layout>
+  <section class="px-4 sm:px-8 py-16 sm:py-24 max-w-3xl mx-auto">
+    <p class="text-sm uppercase tracking-widest text-base-content/60 mb-4">
+      A movement for a fairer New Zealand
+    </p>
+    <h1 class="text-6xl font-bold tracking-tight leading-tight">
+      Tax <span
+        class="bg-linear-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent"
+        >wealth</span
+      >, <br />not <span
+        class="bg-linear-to-r from-emerald-600 to-teal-400 bg-clip-text text-transparent"
+        >work</span
+      >.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-base-content/80 leading-relaxed">
+      New Zealand taxes the wages of nurses, teachers and tradies but barely
+      touches the fortunes that grow quietly in property and stocks. It's time
+      to support working kiwis.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#solution" class="btn btn-primary">What's the solution?</a>
+      <a href="#involved" class="btn">How to help</a>
+    </div>
+  </section>
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
+  <section class="bg-base-200 border-y border-base-300">
+    <div class="px-4 sm:px-8 py-16 max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">The problem</h2>
+      <p class="mt-4 text-base-content/80 leading-relaxed">
+        Most Kiwis earn their living through work, and pay tax on every dollar
+        earned. But income from things like capital gains on investment
+        property, large inheritances, and stock portfolio profit is untouched.
+        The result is a system that leans heaviest on those who can least afford
+        it.
+      </p>
+      <ul class="mt-6 space-y-3 text-base-content/80">
+        <li class="flex gap-3">
+          <span class="text-primary font-bold">→</span>
+          <span
+            >Wage earners shoulder a disproportionate share of the tax take.</span
+          >
+        </li>
+        <li class="flex gap-3">
+          <span class="text-primary font-bold">→</span>
+          <span
+            >NZ is one of the only OECD countries without a broad capital gains
+            tax.</span
+          >
+        </li>
+        <li class="flex gap-3">
+          <span class="text-primary font-bold">→</span>
+          <span
+            >Housing is treated more like a money maker than a necessity.</span
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Tax Wealth Not Work" />
-    <meta property="og:locale" content="en_NZ" />
-    <meta property="og:url" content={siteUrl} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Tax wealth, not work — a movement for a fairer New Zealand"
-    />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-    <meta
-      name="twitter:image:alt"
-      content="Tax wealth, not work — a movement for a fairer New Zealand"
-    />
-
-    <!-- Structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script defer src="https://plausible.io/js/pa-jdCJIQQZVkHmVM3J0VvQA.js"
-    ></script>
-    <script>
-      declare global {
-        interface Window {
-          plausible: ((...args: unknown[]) => void) & {
-            q?: unknown[][];
-            o?: Record<string, unknown>;
-            init?: (options?: Record<string, unknown>) => void;
-          };
-        }
-      }
-      window.plausible =
-        window.plausible ||
-        function (...args: unknown[]) {
-          (window.plausible.q = window.plausible.q || []).push(args);
-        };
-      window.plausible.init =
-        window.plausible.init ||
-        function (i?: Record<string, unknown>) {
-          window.plausible.o = i || {};
-        };
-      window.plausible.init();
-    </script>
-  </head>
-  <body class="min-h-screen flex flex-col bg-base-100">
-    <header
-      class="navbar border-b border-base-300 px-4 sm:px-8 sticky top-0 z-50 bg-base-100"
-    >
-      <div class="flex-1 flex items-center gap-3">
-        <img
-          src="/favicon.svg"
-          alt="Tax Wealth Not Work logo"
-          width="40"
-          height="40"
-          class="border border-base-300 rounded"
-        />
-        <span class="font-semibold tracking-tight">Tax Wealth Not Work</span>
-      </div>
-      <div class="flex-none hidden sm:block">
-        <span class="text-sm text-base-content/60">Aotearoa New Zealand</span>
-      </div>
-    </header>
-
-    <main class="flex-1">
-      <section class="px-4 sm:px-8 py-16 sm:py-24 max-w-3xl mx-auto">
-        <p class="text-sm uppercase tracking-widest text-base-content/60 mb-4">
-          A movement for a fairer New Zealand
-        </p>
-        <h1 class="text-6xl font-bold tracking-tight leading-tight">
-          Tax <span
-            class="bg-linear-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent"
-            >wealth</span
-          >, <br />not <span
-            class="bg-linear-to-r from-emerald-600 to-teal-400 bg-clip-text text-transparent"
-            >work</span
-          >.
-        </h1>
-        <p class="mt-6 text-lg sm:text-xl text-base-content/80 leading-relaxed">
-          New Zealand taxes the wages of nurses, teachers and tradies but barely
-          touches the fortunes that grow quietly in property and stocks. It's
-          time to support working kiwis.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#solution" class="btn btn-primary">What's the solution?</a>
-          <a href="#involved" class="btn">How to help</a>
-        </div>
-      </section>
-
-      <section class="bg-base-200 border-y border-base-300">
-        <div class="px-4 sm:px-8 py-16 max-w-3xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
-            The problem
-          </h2>
-          <p class="mt-4 text-base-content/80 leading-relaxed">
-            Most Kiwis earn their living through work, and pay tax on every
-            dollar earned. But income from things like capital gains on
-            investment property, large inheritances, and stock portfolio profit
-            is untouched. The result is a system that leans heaviest on those
-            who can least afford it.
+  <section
+    id="solution"
+    class="px-4 sm:px-8 py-16 max-w-3xl mx-auto scroll-mt-16"
+  >
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+      What's the solution?
+    </h2>
+    <p class="mt-4 text-base-content/80 leading-relaxed">
+      A simple principle: Work shouldn't be taxed more than wealth. We need tax
+      reform that:
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="card bg-base-100 border border-base-300">
+        <div class="card-body">
+          <h3 class="card-title text-lg">Lower tax on work</h3>
+          <p class="text-base-content/70">
+            Cut income tax for low and middle earners so working Kiwis keep more
+            of what they make.
           </p>
-          <ul class="mt-6 space-y-3 text-base-content/80">
-            <li class="flex gap-3">
-              <span class="text-primary font-bold">→</span>
-              <span
-                >Wage earners shoulder a disproportionate share of the tax take.</span
-              >
-            </li>
-            <li class="flex gap-3">
-              <span class="text-primary font-bold">→</span>
-              <span
-                >NZ is one of the only OECD countries without a broad capital
-                gains tax.</span
-              >
-            </li>
-            <li class="flex gap-3">
-              <span class="text-primary font-bold">→</span>
-              <span
-                >Housing is treated more like a money maker than a necessity.</span
-              >
-            </li>
-          </ul>
         </div>
-      </section>
-
-      <section
-        id="solution"
-        class="px-4 sm:px-8 py-16 max-w-3xl mx-auto scroll-mt-16"
-      >
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
-          What's the solution?
-        </h2>
-        <p class="mt-4 text-base-content/80 leading-relaxed">
-          A simple principle: Work shouldn't be taxed more than wealth. We need
-          tax reform that:
-        </p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-          <div class="card bg-base-100 border border-base-300">
-            <div class="card-body">
-              <h3 class="card-title text-lg">Lower tax on work</h3>
-              <p class="text-base-content/70">
-                Cut income tax for low and middle earners so working Kiwis keep
-                more of what they make.
-              </p>
-            </div>
-          </div>
-          <div class="card bg-base-100 border border-base-300">
-            <div class="card-body">
-              <h3 class="card-title text-lg">Fair tax on wealth</h3>
-              <p class="text-base-content/70">
-                A broad capital gains tax and a fairer treatment of property and
-                investment income.
-              </p>
-            </div>
-          </div>
-          <div class="card bg-base-100 border border-base-300">
-            <div class="card-body">
-              <h3 class="card-title text-lg">Close the loopholes</h3>
-              <p class="text-base-content/70">
-                End the structures that let the wealthiest pay a lower effective
-                rate than the average earner.
-              </p>
-            </div>
-          </div>
-          <div class="card bg-base-100 border border-base-300">
-            <div class="card-body">
-              <h3 class="card-title text-lg">Invest in the basics</h3>
-              <p class="text-base-content/70">
-                Crucially we need to fund health, housing and education of all
-                Kiwis.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="involved"
-        class="bg-base-200 border-t border-base-300 scroll-mt-16"
-      >
-        <div class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center">
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
-            Join the movement
-          </h2>
-          <p class="mt-4 text-base-content/80 leading-relaxed">
-            Change doesn't start in parliament, it starts at the kitchen table,
-            break room, and group chat.
-          </p>
-          <p class="mt-6 text-lg sm:text-xl font-semibold">
-            Talk to your mates. Tax wealth, not work.
-          </p>
-
-          <div class="mt-10 flex flex-col items-center gap-8">
-            <div class="flex flex-wrap justify-center gap-3">
-              <button
-                id="copy-link-btn"
-                class="btn btn-primary gap-2"
-                aria-label="Copy website link"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path>
-                </svg>
-                <span id="copy-link-label">Copy twnw.nz</span>
-              </button>
-
-              <button
-                id="share-btn"
-                class="btn btn-neutral gap-2 hidden"
-                aria-label="Share this page"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="18" cy="5" r="3"></circle>
-                  <circle cx="6" cy="12" r="3"></circle>
-                  <circle cx="18" cy="19" r="3"></circle>
-                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                </svg>
-                Share
-              </button>
-            </div>
-
-            <div class="flex flex-col items-center gap-4">
-              <p class="text-sm text-base-content/60 uppercase tracking-widest">
-                Scan to share
-              </p>
-              <img
-                id="qr-code"
-                src="/qr-code.png"
-                alt="QR code for twnw.nz"
-                width="160"
-                height="160"
-                class="rounded-lg border border-base-300 bg-white p-2"
-              />
-              <a
-                id="download-qr-btn"
-                href="/qr-code.png"
-                download="twnw-qr-code.png"
-                class="btn btn-sm gap-2"
-                aria-label="Download QR code"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Download QR code
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <script>
-        // Copy link button
-        const copyBtn = document.getElementById("copy-link-btn");
-        const copyLabel = document.getElementById("copy-link-label");
-        copyBtn?.addEventListener("click", async () => {
-          try {
-            await navigator.clipboard.writeText("https://twnw.nz");
-            if (copyLabel) {
-              copyLabel.textContent = "Copied!";
-              setTimeout(() => {
-                copyLabel.textContent = "Copy twnw.nz";
-              }, 2000);
-            }
-          } catch {
-            // Fallback for browsers without clipboard API
-            const input = document.createElement("input");
-            input.value = "https://twnw.nz";
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand("copy");
-            document.body.removeChild(input);
-            if (copyLabel) {
-              copyLabel.textContent = "Copied!";
-              setTimeout(() => {
-                copyLabel.textContent = "Copy twnw.nz";
-              }, 2000);
-            }
-          }
-        });
-
-        // Web Share API (mobile / supported browsers)
-        const shareBtn = document.getElementById("share-btn");
-        if (navigator.share) {
-          shareBtn?.classList.remove("hidden");
-          shareBtn?.addEventListener("click", () => {
-            navigator.share({
-              title: "Tax Wealth Not Work",
-              text: "Work shouldn't be taxed more than wealth. Check out this NZ advocacy site.",
-              url: "https://twnw.nz",
-            });
-          });
-        }
-      </script>
-
-      <section class="px-4 sm:px-8 py-16 max-w-3xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
-          Learn more
-        </h2>
-        <p class="mt-4 text-base-content/80 leading-relaxed">
-          You're not alone in thinking this. Voices across the world have been
-          making the case for years — here's where to start:
-        </p>
-        <ul class="mt-8 space-y-8">
-          <li class="flex flex-col gap-1">
-            <a
-              href="https://capitalgainstax.nz/"
-              target="_blank"
-              rel="noopener"
-              class="link link-primary font-semibold"
-            >
-              Labour's Capital Gains Tax Policy
-            </a>
-            <span class="text-base-content/70">
-              NZ Labour · a 28% tax on profits from investment property sales,
-              with revenue funding free doctor's visits.
-            </span>
-          </li>
-          <li class="flex flex-col gap-1">
-            <a
-              href="https://www.greens.org.nz/ending_poverty_together"
-              target="_blank"
-              rel="noopener"
-              class="link link-primary font-semibold"
-            >
-              Green Party: Ending Poverty Together
-            </a>
-            <span class="text-base-content/70">
-              NZ Greens · a wealth tax on assets over $2m and a guaranteed
-              minimum income to eliminate poverty.
-            </span>
-          </li>
-          <li class="flex flex-col gap-1">
-            <a
-              href="https://www.youtube.com/@garyseconomics"
-              target="_blank"
-              rel="noopener"
-              class="link link-primary font-semibold"
-            >
-              Gary's Economics
-            </a>
-            <span class="text-base-content/70">
-              UK · ex-Citi trader Gary Stevenson on why wealth inequality is the
-              story of our time.
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      <section
-        class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center border-t border-base-300"
-      >
-        <p class="text-sm uppercase tracking-widest text-base-content/60">
-          More coming soon
-        </p>
-        <p class="mt-3 text-base-content/70">
-          This is just the start. Check back as the movement grows.
-        </p>
-      </section>
-    </main>
-
-    <footer class="border-t border-base-300">
-      <div
-        class="px-4 sm:px-8 py-6 max-w-3xl mx-auto flex flex-col sm:flex-row justify-between gap-2 text-sm text-base-content/60"
-      >
-        <span>© {new Date().getFullYear()} Tax Wealth Not Work</span>
-        <span>Aotearoa New Zealand</span>
       </div>
-    </footer>
-  </body>
-</html>
+      <div class="card bg-base-100 border border-base-300">
+        <div class="card-body">
+          <h3 class="card-title text-lg">Fair tax on wealth</h3>
+          <p class="text-base-content/70">
+            A broad capital gains tax and a fairer treatment of property and
+            investment income.
+          </p>
+        </div>
+      </div>
+      <div class="card bg-base-100 border border-base-300">
+        <div class="card-body">
+          <h3 class="card-title text-lg">Close the loopholes</h3>
+          <p class="text-base-content/70">
+            End the structures that let the wealthiest pay a lower effective
+            rate than the average earner.
+          </p>
+        </div>
+      </div>
+      <div class="card bg-base-100 border border-base-300">
+        <div class="card-body">
+          <h3 class="card-title text-lg">Invest in the basics</h3>
+          <p class="text-base-content/70">
+            Crucially we need to fund health, housing and education of all
+            Kiwis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Share />
+
+  <section class="px-4 sm:px-8 py-16 max-w-3xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Learn more</h2>
+    <p class="mt-4 text-base-content/80 leading-relaxed">
+      You're not alone in thinking this. Voices across the world have been
+      making the case for years — here's where to start:
+    </p>
+    <ul class="mt-8 space-y-8">
+      <li class="flex flex-col gap-1">
+        <a
+          href="https://capitalgainstax.nz/"
+          target="_blank"
+          rel="noopener"
+          class="link link-primary font-semibold"
+        >
+          Labour's Capital Gains Tax Policy
+        </a>
+        <span class="text-base-content/70">
+          NZ Labour · a 28% tax on profits from investment property sales, with
+          revenue funding free doctor's visits.
+        </span>
+      </li>
+      <li class="flex flex-col gap-1">
+        <a
+          href="https://www.greens.org.nz/ending_poverty_together"
+          target="_blank"
+          rel="noopener"
+          class="link link-primary font-semibold"
+        >
+          Green Party: Ending Poverty Together
+        </a>
+        <span class="text-base-content/70">
+          NZ Greens · a wealth tax on assets over $2m and a guaranteed minimum
+          income to eliminate poverty.
+        </span>
+      </li>
+      <li class="flex flex-col gap-1">
+        <a
+          href="https://www.youtube.com/@garyseconomics"
+          target="_blank"
+          rel="noopener"
+          class="link link-primary font-semibold"
+        >
+          Gary's Economics
+        </a>
+        <span class="text-base-content/70">
+          UK · ex-Citi trader Gary Stevenson on why wealth inequality is the
+          story of our time.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section
+    class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center border-t border-base-300"
+  >
+    <p class="text-sm uppercase tracking-widest text-base-content/60">
+      More coming soon
+    </p>
+    <p class="mt-3 text-base-content/70">
+      This is just the start. Check back as the movement grows.
+    </p>
+  </section>
+</Layout>

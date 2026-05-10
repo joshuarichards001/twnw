@@ -1,0 +1,151 @@
+<section
+  id="involved"
+  class="bg-base-200 border-t border-base-300 scroll-mt-16"
+>
+  <div class="px-4 sm:px-8 py-16 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">
+      Join the movement
+    </h2>
+    <p class="mt-4 text-base-content/80 leading-relaxed">
+      Change doesn't start in parliament, it starts at the kitchen table, break
+      room, and group chat.
+    </p>
+    <p class="mt-6 text-lg sm:text-xl font-semibold">
+      Talk to your mates. Tax wealth, not work.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center gap-8">
+      <div class="flex flex-wrap justify-center gap-3">
+        <button
+          id="copy-link-btn"
+          class="btn btn-primary gap-2"
+          aria-label="Copy website link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+            ></path>
+          </svg>
+          <span id="copy-link-label">Copy twnw.nz</span>
+        </button>
+
+        <button
+          id="share-btn"
+          class="btn btn-neutral gap-2 hidden"
+          aria-label="Share this page"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share
+        </button>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <p class="text-sm text-base-content/60 uppercase tracking-widest">
+          Scan to share
+        </p>
+        <img
+          id="qr-code"
+          src="/qr-code.png"
+          alt="QR code for twnw.nz"
+          width="160"
+          height="160"
+          class="rounded-lg border border-base-300 bg-white p-2"
+        />
+        <a
+          id="download-qr-btn"
+          href="/qr-code.png"
+          download="twnw-qr-code.png"
+          class="btn btn-sm gap-2"
+          aria-label="Download QR code"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download QR code
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Copy link button
+  const copyBtn = document.getElementById("copy-link-btn");
+  const copyLabel = document.getElementById("copy-link-label");
+  copyBtn?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("https://twnw.nz");
+      if (copyLabel) {
+        copyLabel.textContent = "Copied!";
+        setTimeout(() => {
+          copyLabel.textContent = "Copy twnw.nz";
+        }, 2000);
+      }
+    } catch {
+      // Fallback for browsers without clipboard API
+      const input = document.createElement("input");
+      input.value = "https://twnw.nz";
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      if (copyLabel) {
+        copyLabel.textContent = "Copied!";
+        setTimeout(() => {
+          copyLabel.textContent = "Copy twnw.nz";
+        }, 2000);
+      }
+    }
+  });
+
+  // Web Share API (mobile / supported browsers)
+  const shareBtn = document.getElementById("share-btn");
+  if (navigator.share) {
+    shareBtn?.classList.remove("hidden");
+    shareBtn?.addEventListener("click", () => {
+      navigator.share({
+        title: "Tax Wealth Not Work",
+        text: "Work shouldn't be taxed more than wealth. Check out this NZ advocacy site.",
+        url: "https://twnw.nz",
+      });
+    });
+  }
+</script>
