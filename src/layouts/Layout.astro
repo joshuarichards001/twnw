@@ -107,9 +107,9 @@ const jsonLd = {
   </head>
   <body class="min-h-screen flex flex-col bg-base-100">
     <header
-      class="navbar border-b border-base-300 px-4 sm:px-8 sticky top-0 z-50 bg-base-100"
+      class="navbar justify-between border-b border-base-300 px-4 sm:px-8 sticky top-0 z-50 bg-base-100"
     >
-      <div class="flex-1 flex items-center gap-3">
+      <a href="/" class="flex items-center gap-3 w-fit">
         <img
           src="/favicon.svg"
           alt="Tax Wealth Not Work logo"
@@ -118,7 +118,7 @@ const jsonLd = {
           class="border border-base-300 rounded"
         />
         <span class="font-semibold tracking-tight">Tax Wealth Not Work</span>
-      </div>
+      </a>
       <div class="flex-none hidden sm:block">
         <span class="text-sm text-base-content/60">Aotearoa New Zealand</span>
       </div>
@@ -133,7 +133,9 @@ const jsonLd = {
         class="px-4 sm:px-8 py-6 max-w-3xl mx-auto flex flex-col sm:flex-row justify-between gap-2 text-sm text-base-content/60"
       >
         <span>© {new Date().getFullYear()} Tax Wealth Not Work</span>
-        <span>Aotearoa New Zealand</span>
+        <div class="flex items-center gap-4">
+          <a href="/about" class="link link-hover">About This Project</a>
+        </div>
       </div>
     </footer>
   </body>
