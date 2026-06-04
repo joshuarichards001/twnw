@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Share from "../components/Share.astro";
 import Tooltip from "../components/Tooltip.astro";
+import Card from "../components/Card.astro";
+import Resource from "../components/Resource.astro";
 ---
 
 <Layout>
@@ -77,42 +79,22 @@ import Tooltip from "../components/Tooltip.astro";
       reform that:
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
-      <div class="card bg-base-100 border border-base-300">
-        <div class="card-body">
-          <h3 class="card-title text-lg">Lower tax on work</h3>
-          <p class="text-base-content/70">
-            Cut income tax for low and middle earners so working Kiwis keep more
-            of what they make.
-          </p>
-        </div>
-      </div>
-      <div class="card bg-base-100 border border-base-300">
-        <div class="card-body">
-          <h3 class="card-title text-lg">Fair tax on wealth</h3>
-          <p class="text-base-content/70">
-            A broad capital gains tax and a fairer treatment of property and
-            investment income.
-          </p>
-        </div>
-      </div>
-      <div class="card bg-base-100 border border-base-300">
-        <div class="card-body">
-          <h3 class="card-title text-lg">Close the loopholes</h3>
-          <p class="text-base-content/70">
-            End the structures that let the wealthiest pay a lower effective
-            rate than the average earner.
-          </p>
-        </div>
-      </div>
-      <div class="card bg-base-100 border border-base-300">
-        <div class="card-body">
-          <h3 class="card-title text-lg">Fund the foundations</h3>
-          <p class="text-base-content/70">
-            Invest in world-class health, housing and education — the platform
-            that gives every Kiwi a real shot at getting ahead.
-          </p>
-        </div>
-      </div>
+      <Card title="Lower tax on work">
+        Cut income tax for low and middle earners so working Kiwis keep more of
+        what they make.
+      </Card>
+      <Card title="Fair tax on wealth">
+        A broad capital gains tax and a fairer treatment of property and
+        investment income.
+      </Card>
+      <Card title="Close the loopholes">
+        End the structures that let the wealthiest pay a lower effective rate
+        than the average earner.
+      </Card>
+      <Card title="Fund the foundations">
+        Invest in world-class health, housing and education — the platform that
+        gives every Kiwi a real shot at getting ahead.
+      </Card>
     </div>
   </section>
 
@@ -132,45 +114,22 @@ import Tooltip from "../components/Tooltip.astro";
         everyone contributing their fair share to invest in the future:
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="card bg-base-100 border border-base-300">
-          <div class="card-body">
-            <h3 class="card-title text-lg">Warm, dry, affordable homes</h3>
-            <p class="text-base-content/70">
-              Treat housing as somewhere to live, not just an asset to flip —
-              and build the homes a growing country needs.
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 border border-base-300">
-          <div class="card-body">
-            <h3 class="card-title text-lg">Healthcare without the wait</h3>
-            <p class="text-base-content/70">
-              Shorter queues, GP visits people can afford, and a system that
-              catches problems early instead of expensively late.
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 border border-base-300">
-          <div class="card-body">
-            <h3 class="card-title text-lg">
-              Schools and skills that lift wages
-            </h3>
-            <p class="text-base-content/70">
-              Every kid and every worker with a genuine shot — because skills
-              and education are what raise productivity and pay over the long
-              run.
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 border border-base-300">
-          <div class="card-body">
-            <h3 class="card-title text-lg">Infrastructure that works</h3>
-            <p class="text-base-content/70">
-              Pipes, transport and clean energy built — and maintained — for the
-              decades ahead, so the basics simply work.
-            </p>
-          </div>
-        </div>
+        <Card title="Warm, dry, affordable homes">
+          Treat housing as somewhere to live, not just an asset to flip — and
+          build the homes a growing country needs.
+        </Card>
+        <Card title="Healthcare without the wait">
+          Shorter queues, GP visits people can afford, and a system that catches
+          problems early instead of expensively late.
+        </Card>
+        <Card title="Schools and skills that lift wages">
+          Every kid and every worker with a genuine shot — because skills and
+          education are what raise productivity and pay over the long run.
+        </Card>
+        <Card title="Infrastructure that works">
+          Pipes, transport and clean energy built — and maintained — for the
+          decades ahead, so the basics simply work.
+        </Card>
       </div>
     </div>
   </section>
@@ -185,61 +144,33 @@ import Tooltip from "../components/Tooltip.astro";
         making the case for years — here's where to start:
       </p>
       <ul class="mt-8 space-y-8">
-        <li class="flex flex-col gap-1">
-          <a
-            href="https://thespinoff.co.nz/the-bulletin/27-04-2023/ird-report-reveals-fundamental-unfairness-of-how-the-wealthy-are-taxed/"
-            target="_blank"
-            rel="noopener"
-            class="link link-primary font-semibold"
-          >
-            ‘Fundamental unfairness’ of how the wealthy are taxed
-          </a>
-          <span class="text-base-content/70">
-            IRD Report - write up by The Spinoff shows how the wealthy are
-            unfairly taxed.
-          </span>
-        </li>
-        <li class="flex flex-col gap-1">
-          <a
-            href="https://www.youtube.com/@garyseconomics"
-            target="_blank"
-            rel="noopener"
-            class="link link-primary font-semibold"
-          >
-            Gary's Economics
-          </a>
-          <span class="text-base-content/70">
-            UK Movement - ex-Citi trader Gary Stevenson on why wealth inequality
-            is the story of our time.
-          </span>
-        </li>
-        <li class="flex flex-col gap-1">
-          <a
-            href="https://www.opportunity.org.nz/tax-reset"
-            target="_blank"
-            rel="noopener"
-            class="link link-primary font-semibold"
-          >
-            Opportunity Land Value Tax Policy
-          </a>
-          <span class="text-base-content/70">
-            Opportunity Party - 1.75% Land Value Tax to fund a Citizen's Income.
-          </span>
-        </li>
-        <li class="flex flex-col gap-1">
-          <a
-            href="https://capitalgainstax.nz/"
-            target="_blank"
-            rel="noopener"
-            class="link link-primary font-semibold"
-          >
-            Labour's Capital Gains Tax Policy
-          </a>
-          <span class="text-base-content/70">
-            Labour Party - 28% tax on profits from investment property sales to
-            fund free doctor's visits.
-          </span>
-        </li>
+        <Resource
+          href="https://thespinoff.co.nz/the-bulletin/27-04-2023/ird-report-reveals-fundamental-unfairness-of-how-the-wealthy-are-taxed/"
+          title="‘Fundamental unfairness’ of how the wealthy are taxed"
+        >
+          IRD Report - write up by The Spinoff shows how the wealthy are unfairly
+          taxed.
+        </Resource>
+        <Resource
+          href="https://www.youtube.com/@garyseconomics"
+          title="Gary's Economics"
+        >
+          UK Movement - ex-Citi trader Gary Stevenson on why wealth inequality is
+          the story of our time.
+        </Resource>
+        <Resource
+          href="https://www.opportunity.org.nz/tax-reset"
+          title="Opportunity Land Value Tax Policy"
+        >
+          Opportunity Party - 1.75% Land Value Tax to fund a Citizen's Income.
+        </Resource>
+        <Resource
+          href="https://capitalgainstax.nz/"
+          title="Labour's Capital Gains Tax Policy"
+        >
+          Labour Party - 28% tax on profits from investment property sales to
+          fund free doctor's visits.
+        </Resource>
       </ul>
     </div>
   </section>
