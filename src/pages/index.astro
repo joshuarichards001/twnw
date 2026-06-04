@@ -9,7 +9,7 @@ import Resource from "../components/Resource.astro";
 <Layout>
   <section class="px-4 sm:px-8 py-16 sm:py-24 max-w-3xl mx-auto">
     <p class="text-sm uppercase tracking-widest text-base-content/60 mb-4">
-      A movement for a prosperous New Zealand
+      The movement for a prosperous New Zealand
     </p>
     <h1 class="text-6xl font-bold tracking-tight leading-tight">
       Tax <span
@@ -25,9 +25,9 @@ import Resource from "../components/Resource.astro";
       touches the fortunes that grow quietly in property and shares. Everyone
       should contribute their fair share to invest in our future.
     </p>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="#solution" class="btn btn-primary">What's the solution?</a>
-      <a href="#future" class="btn btn-neutral">What could we fund?</a>
+    <div class="mt-8 flex flex-col items-start sm:flex-row gap-3">
+      <a href="#solution" class="btn btn-neutral">What's the solution?</a>
+      <a href="#future" class="btn btn-primary">What could we fund?</a>
       <a href="#involved" class="btn">How to help</a>
     </div>
   </section>
@@ -40,14 +40,12 @@ import Resource from "../components/Resource.astro";
         earned. But income from things like capital gains on investment
         property, large inheritances, and share portfolio profits is untouched.
         The result is a system that leans heaviest on those who can least afford
-        it and starves us of the means to invest in our own future.
+        it and starves us of the means to invest in our future.
       </p>
       <ul class="mt-6 space-y-3 text-base-content/80">
         <li class="flex gap-3">
           <span class="text-primary font-bold">→</span>
-          <span
-            >Wage earners shoulder a disproportionate share of the tax take.</span
-          >
+          <span>Wage earners shoulder an unfair share of the tax take.</span>
         </li>
         <li class="flex gap-3">
           <span class="text-primary font-bold">→</span>
@@ -75,25 +73,27 @@ import Resource from "../components/Resource.astro";
   >
     <h2 class="text-3xl font-bold tracking-tight">The solution</h2>
     <p class="mt-4 text-base-content/80 leading-relaxed">
-      A simple principle: work shouldn't be taxed more than wealth. We need tax
-      reform that:
+      Wealth should be taxed like work. A good start is a land value tax. It's a
+      modest annual charge on the value of land, not the buildings or work built
+      on top of it.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
-      <Card title="Lower tax on work">
-        Cut income tax for low and middle earners so working Kiwis keep more of
-        what they make.
+      <Card title="A tax that's hard to dodge">
+        Land can't be hidden offshore, moved, or disguised in a trust. Taxing it
+        lets us ease the load on the wages and effort of ordinary Kiwis.
       </Card>
-      <Card title="Fair tax on wealth">
-        A broad capital gains tax and a fairer treatment of property and
-        investment income.
+      <Card title="Cheaper homes, less speculation">
+        A holding cost on land takes the easy money out of land-banking and
+        property portfolios. It nudges house prices down and frees up land to
+        build on.
       </Card>
-      <Card title="Close the loopholes">
-        End the structures that let the wealthiest pay a lower effective rate
-        than the average earner.
+      <Card title="Investment that builds, not hoards">
+        When land stops being the best investment, capital flows into
+        businesses, jobs and innovation.
       </Card>
-      <Card title="Fund the foundations">
-        Invest in world-class health, housing and education — the platform that
-        gives every Kiwi a real shot at getting ahead.
+      <Card title="Billions to invest in our future">
+        Even a modest rate would raise billions a year to fund the things a
+        growing country needs.
       </Card>
     </div>
   </section>
@@ -145,31 +145,23 @@ import Resource from "../components/Resource.astro";
       </p>
       <ul class="mt-8 space-y-8">
         <Resource
-          href="https://thespinoff.co.nz/the-bulletin/27-04-2023/ird-report-reveals-fundamental-unfairness-of-how-the-wealthy-are-taxed/"
-          title="‘Fundamental unfairness’ of how the wealthy are taxed"
-        >
-          IRD Report - write up by The Spinoff shows how the wealthy are unfairly
-          taxed.
-        </Resource>
-        <Resource
-          href="https://www.youtube.com/@garyseconomics"
-          title="Gary's Economics"
-        >
-          UK Movement - ex-Citi trader Gary Stevenson on why wealth inequality is
-          the story of our time.
-        </Resource>
-        <Resource
           href="https://www.opportunity.org.nz/tax-reset"
           title="Opportunity Land Value Tax Policy"
         >
           Opportunity Party - 1.75% Land Value Tax to fund a Citizen's Income.
         </Resource>
         <Resource
-          href="https://capitalgainstax.nz/"
-          title="Labour's Capital Gains Tax Policy"
+          href="https://thespinoff.co.nz/the-bulletin/27-04-2023/ird-report-reveals-fundamental-unfairness-of-how-the-wealthy-are-taxed/"
+          title="‘Fundamental unfairness’ of how the wealthy are taxed"
         >
-          Labour Party - 28% tax on profits from investment property sales to
-          fund free doctor's visits.
+          IRD Report - write up by The Spinoff shows how the wealthy aren't paying their fair share.
+        </Resource>
+        <Resource
+          href="https://www.youtube.com/@garyseconomics"
+          title="Gary's Economics"
+        >
+          UK Movement - ex-Citi trader Gary Stevenson on why wealth inequality
+          is the story of our time.
         </Resource>
       </ul>
     </div>
