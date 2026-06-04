@@ -2,3 +2,10 @@
 @plugin "daisyui" {
   themes: emerald --default;
 }
+
+/* Lighten the emerald theme's base shades so the tinted sections keep
+   strong text contrast (defaults are 93%/86% — too dark for body copy). */
+[data-theme="emerald"] {
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(91% 0 0);
+}
